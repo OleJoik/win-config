@@ -1,4 +1,4 @@
-vim.keymap.set("n", "<leader>pv", ":Ex<CR>")
+vim.keymap.set("n", "<leader>pv", ":Fern %:p:h<CR>")
 vim.keymap.set("n", "<leader>pe", ":! explorer \"%:p:h\"<CR><CR>")
 
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
