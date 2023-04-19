@@ -7,8 +7,12 @@ return require('packer').startup(function(use)
     -- Packer can manage itself
     use 'wbthomason/packer.nvim'
 
+    use 'lambdalisue/fern.vim' 
+    use "lambdalisue/fern-git-status.vim"
+    use "lambdalisue/fern-renderer-nerdfont.vim"
+    use "lambdalisue/nerdfont.vim"
+    use "lambdalisue/fern-hijack.vim"
     use 'voldikss/vim-floaterm'
-
 
     use {
         'nvim-telescope/telescope.nvim', tag = '0.1.1',

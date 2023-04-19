@@ -104,6 +104,26 @@ _G.packer_plugins = {
     path = "C:\\Users\\oleja\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\cmp_luasnip",
     url = "https://github.com/saadparwaiz1/cmp_luasnip"
   },
+  ["fern-git-status.vim"] = {
+    loaded = true,
+    path = "C:\\Users\\oleja\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\fern-git-status.vim",
+    url = "https://github.com/lambdalisue/fern-git-status.vim"
+  },
+  ["fern-hijack.vim"] = {
+    loaded = true,
+    path = "C:\\Users\\oleja\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\fern-hijack.vim",
+    url = "https://github.com/lambdalisue/fern-hijack.vim"
+  },
+  ["fern-renderer-nerdfont.vim"] = {
+    loaded = true,
+    path = "C:\\Users\\oleja\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\fern-renderer-nerdfont.vim",
+    url = "https://github.com/lambdalisue/fern-renderer-nerdfont.vim"
+  },
+  ["fern.vim"] = {
+    loaded = true,
+    path = "C:\\Users\\oleja\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\fern.vim",
+    url = "https://github.com/lambdalisue/fern.vim"
+  },
   ["friendly-snippets"] = {
     loaded = true,
     path = "C:\\Users\\oleja\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\friendly-snippets",
@@ -128,6 +148,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "C:\\Users\\oleja\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\mason.nvim",
     url = "https://github.com/williamboman/mason.nvim"
+  },
+  ["nerdfont.vim"] = {
+    loaded = true,
+    path = "C:\\Users\\oleja\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\nerdfont.vim",
+    url = "https://github.com/lambdalisue/nerdfont.vim"
   },
   ["nvim-cmp"] = {
     loaded = true,
