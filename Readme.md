@@ -22,8 +22,8 @@ nvim $PROFILE
 
 ...Add the following:
 ```ps
-$ENV::STARSHIP_CONFIG = "$HOME\win-config\starship\starship.toml"
-$ENV::XDG_CONFIG_HOME = "$HOME\win-config\"
+$ENV:STARSHIP_CONFIG = "$HOME\win-config\starship\starship.toml"
+$ENV:XDG_CONFIG_HOME = "$HOME\win-config\"
 Invoke-Expression (&starship init powershell)
 ```
 
