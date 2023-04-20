@@ -6,8 +6,23 @@ if not cmp_status_ok then
     return
 end
 
+local luasnip = require 'luasnip'
+
+luasnip.config.setup {}
+
+snippet = {
+    expand = function(args)
+      luasnip.lsp_expand(args.body)
+    end,
+  },
+
 -- Basic mapping
 cmp.setup({
+    snippet = {
+        expand = function(args)
+            luasnip.lsp_expand(args.body)
+        end,
+    },
     mapping = cmp.mapping.preset.insert({
         ["<C-p>"] = cmp.mapping.select_prev_item(),
         ["<C-n>"] = cmp.mapping.select_next_item(),
