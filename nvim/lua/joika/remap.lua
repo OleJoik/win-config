@@ -5,6 +5,18 @@ vim.keymap.set("n", "<leader>md", ":MarkdownPreviewToggle<CR>")
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 
+vim.keymap.set("n", "<C-a>", "ggVG") 
+vim.keymap.set("n", "<leader>t2", function() 
+    vim.opt.tabstop = 2 
+    vim.opt.softtabstop = 2 
+    vim.opt.shiftwidth = 2 
+end)
+vim.keymap.set("n", "<leader>t4", function() 
+    vim.opt.tabstop = 4 
+    vim.opt.softtabstop = 4 
+    vim.opt.shiftwidth = 4 
+end)
+
 vim.keymap.set("n", "-", ":e %:h<CR>")
 
 vim.keymap.set("n", "J", "mzJ`z")
