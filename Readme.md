@@ -12,6 +12,9 @@
 - [ripgrep](https://github.com/BurntSushi/ripgrep)
 - [packer](https://github.com/wbthomason/packer.nvim)
 
+- Lua language server: `scoop install lua-language-server`
+    ...and add the binary to $PATH, eg: `~\AppData\Local\nvim-data\mason\packages\lua-language-server\bin\lua-language-server.exe`
+
 ## Update Terminal profile
 
 Script being run when terminal starts

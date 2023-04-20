@@ -1,4 +1,4 @@
-vim.keymap.set("n", "<leader>pv", ":Fern -stay %:p:h<CR>")
+vim.keymap.set("n", "<leader>pv", ":Ex<CR>")
 vim.keymap.set("n", "<leader>pe", ":! explorer \"%:p:h\"<CR><CR>")
 vim.keymap.set("n", "<leader>md", ":MarkdownPreviewToggle<CR>")
 
