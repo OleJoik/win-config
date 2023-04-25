@@ -1,3 +1,9 @@
+local status, packer = pcall(require, "packer")
+if (not status) then
+  print("Packer is not installed")
+  return
+end
+
 vim.cmd [[packadd packer.nvim]]
 
 return require('packer').startup(function(use)
@@ -18,15 +24,34 @@ return require('packer').startup(function(use)
     use('ThePrimeagen/harpoon')
     use('tpope/vim-fugitive')
 
-    use "neovim/nvim-lspconfig" -- enable LSP
-    use "williamboman/mason.nvim"
-    use "williamboman/mason-lspconfig.nvim"
-    use "jose-elias-alvarez/null-ls.nvim" -- for formatters and linters
-    use "hrsh7th/nvim-cmp"
-    use "hrsh7th/cmp-nvim-lsp"
 
-    -- attempting to get in some autocompletions in tsx
-    use 'L3MON4D3/LuaSnip' 
-    use 'saadparwaiz1/cmp_luasnip'
+    use {
+        'VonHeikemen/lsp-zero.nvim',
+        branch = 'v2.x',
+        requires = {
+            -- LSP Support
+            {'neovim/nvim-lspconfig'},             -- Required
+            {                                      -- Optional
+            'williamboman/mason.nvim',
+            run = function()
+                pcall(vim.cmd, 'MasonUpdate')
+            end,
+        },
+        {'williamboman/mason-lspconfig.nvim'}, -- Optional
 
+        -- Autocompletion
+        {'hrsh7th/nvim-cmp'},     -- Required
+        {'hrsh7th/cmp-nvim-lsp'}, -- Required
+        {'L3MON4D3/LuaSnip'},     -- Required
+    },
+
+    use({
+        "glepnir/lspsaga.nvim",
+        requires = {
+            {"nvim-tree/nvim-web-devicons"},
+            --Please make sure you install markdown and markdown_inline parser
+            {"nvim-treesitter/nvim-treesitter"}
+        }
+    })
+}
 end)

@@ -1,7 +1,11 @@
 
-require("joika.lsp")
 require("joika.packer")
-require("joika.set")
+
 require("joika.statusline")
-require("joika.cmp")
+
+
+-- order matters
+require("joika.set")
 require("joika.remap")
+
+require("joika.lsp")

@@ -7,16 +7,16 @@ vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 vim.keymap.set("v", "<", "<gv")
 vim.keymap.set("v", ">", ">gv")
 
-vim.keymap.set("n", "<C-a>", "ggVG") 
-vim.keymap.set("n", "<leader>t2", function() 
-    vim.opt.tabstop = 2 
-    vim.opt.softtabstop = 2 
-    vim.opt.shiftwidth = 2 
+vim.keymap.set("n", "<C-a>", "ggVG")
+vim.keymap.set("n", "<leader>t2", function()
+    vim.opt.tabstop = 2
+    vim.opt.softtabstop = 2
+    vim.opt.shiftwidth = 2
 end)
-vim.keymap.set("n", "<leader>t4", function() 
-    vim.opt.tabstop = 4 
-    vim.opt.softtabstop = 4 
-    vim.opt.shiftwidth = 4 
+vim.keymap.set("n", "<leader>t4", function()
+    vim.opt.tabstop = 4
+    vim.opt.softtabstop = 4
+    vim.opt.shiftwidth = 4
 end)
 
 vim.keymap.set("n", "-", ":e %:h<CR>")
