@@ -1,5 +1,5 @@
-require("joika")
-
-vim.g.netrw_browse_split = 0
-vim.g.netrw_banner = 0
-vim.g.netrw_winsize = 25
+require('joika.set')
+require('joika.highlights')
+require('joika.remap')
+require('joika.packer')
+require('joika.statusline')

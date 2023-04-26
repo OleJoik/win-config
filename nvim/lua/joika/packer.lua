@@ -1,57 +1,51 @@
 local status, packer = pcall(require, "packer")
 if (not status) then
-  print("Packer is not installed")
-  return
+    print("Packer is not installed")
+    return
 end
 
 vim.cmd [[packadd packer.nvim]]
 
-return require('packer').startup(function(use)
+packer.startup(function(use)
     use 'wbthomason/packer.nvim'
-
-    use 'voldikss/vim-floaterm'
-
-    use({ "iamcco/markdown-preview.nvim", run = "cd app && npm install", setup = function() vim.g.mkdp_filetypes = { "markdown" } end, ft = { "markdown" }, })
-
-    use {
-        'nvim-telescope/telescope.nvim', tag = '0.1.1',
-        requires = { {'nvim-lua/plenary.nvim'} }
-    }
 
     use 'Mofiqul/vscode.nvim'
 
-    use('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
-    use('ThePrimeagen/harpoon')
-    use('tpope/vim-fugitive')
+    use 'nvim-lua/plenary.nvim'           -- Common utilities
+    use 'onsails/lspkind-nvim'            -- vscode-like pictograms
+    use 'hrsh7th/cmp-buffer'              -- nvim-cmp source for buffer words
+    use 'hrsh7th/cmp-nvim-lsp'            -- nvim-cmp source for neovim's built-in LSP
+    use 'hrsh7th/nvim-cmp'                -- Completion
+    use 'neovim/nvim-lspconfig'           -- LSP
+    use 'jose-elias-alvarez/null-ls.nvim' -- Use Neovim as a language server to inject LSP diagnostics, code actions, and more via Lua
+    use 'williamboman/mason.nvim'
+    use 'williamboman/mason-lspconfig.nvim'
 
-
+    use 'glepnir/lspsaga.nvim' -- LSP UIs
+    use 'L3MON4D3/LuaSnip'
     use {
-        'VonHeikemen/lsp-zero.nvim',
-        branch = 'v2.x',
-        requires = {
-            -- LSP Support
-            {'neovim/nvim-lspconfig'},             -- Required
-            {                                      -- Optional
-            'williamboman/mason.nvim',
-            run = function()
-                pcall(vim.cmd, 'MasonUpdate')
-            end,
-        },
-        {'williamboman/mason-lspconfig.nvim'}, -- Optional
+        'nvim-treesitter/nvim-treesitter',
+        run = function() require('nvim-treesitter.install').update({ with_sync = true }) end,
+    }
+    use 'kyazdani42/nvim-web-devicons' -- File icons
 
-        -- Autocompletion
-        {'hrsh7th/nvim-cmp'},     -- Required
-        {'hrsh7th/cmp-nvim-lsp'}, -- Required
-        {'L3MON4D3/LuaSnip'},     -- Required
-    },
+    use 'ThePrimeagen/harpoon'
 
-    use({
-        "glepnir/lspsaga.nvim",
+    use 'nvim-telescope/telescope.nvim'
+
+    use 'windwp/nvim-autopairs'
+    use 'windwp/nvim-ts-autotag'
+    use { 'numToStr/Comment.nvim',
         requires = {
-            {"nvim-tree/nvim-web-devicons"},
-            --Please make sure you install markdown and markdown_inline parser
-            {"nvim-treesitter/nvim-treesitter"}
+            'JoosepAlviste/nvim-ts-context-commentstring'
         }
+    }
+    use 'norcalli/nvim-colorizer.lua'
+    use({
+        "iamcco/markdown-preview.nvim",
+        run = function() vim.fn["mkdp#util#install"]() end,
     })
-}
+
+    use 'lewis6991/gitsigns.nvim'
+    use('tpope/vim-fugitive')
 end)
